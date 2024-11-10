@@ -1,0 +1,22 @@
+body {
+  font-family: Arial, Tahoma, Verdana, sans-serif;
+  display: flex;
+  margin: 0 auto;
+  max-width: 45em;
+  box-sizing: border-box;
+  color: #101819;
+}
+
+body > * {
+  padding: 0 1em;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+main {
+  flex-grow: 2;
+  padding: 2.5em 0 5.5em 2em;
+}
+  
