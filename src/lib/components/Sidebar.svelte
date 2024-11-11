@@ -5,7 +5,10 @@
     let nav = document.getElementById('menu');
     let offset = nav.offsetHeight;
     window.onscroll = function() {
-      // console.log(window.scrollY, offset);
+      if (window.matchMedia( '( max-width: 790px )' )) {
+        return;
+      }
+
       if (window.scrollY > offset) {
         nav.classList.add("sticky");
       } else if (window.scrollY < offset + 90) {
@@ -32,14 +35,12 @@
   :root {
     --dark-green: #38564B;
     --light-green: #C6E6B2;
+    --dark-grey: #3b3b3b;
   }
   header {
     flex: 0 0 auto;
     width: 15rem;
 
-    //$dark-green: #152614;
-    //$light-green: #DEF4C6;
-  
     div.wrapper {
       height: 15rem;
       background-color: var(--dark-green);
@@ -49,7 +50,6 @@
         letter-spacing: 0.05em;
         margin-bottom: 3rem;
         color: white;
-        //text-shadow: 2px 2px 0 #A4969B;
         font-size: 50pt;
       }
     }
@@ -83,6 +83,42 @@
   :global(nav.sticky) {
     position: sticky;
     top: 1rem;
-    /*z-index: 100;*/
+  }
+
+  @media screen and (max-width: 790px) {
+    header {
+      width: 100%;
+      div.wrapper {
+        height: 3.5rem;
+        padding: 0.5rem 2rem;
+        background-color: transparent;
+        h1 {
+          margin: 0;
+          font-size: 28pt;
+          text-align: left;
+          color: var(--dark-green);
+        }
+      }
+      nav {
+        margin: 0;
+        padding: 0 2rem;
+        flex-direction: row;
+        flex-flow: wrap;
+        border: none;
+        background-color: transparent;
+
+        > a {
+          width: auto;
+          margin-right: 0.6rem;
+          font-size: 10.5pt;
+          text-decoration: underline;
+          color: var(--dark-grey);
+          &:hover {
+            background-color: transparent;
+            color: var(--dark-grey);
+          }
+        }
+      }
+    }
   }
 </style>

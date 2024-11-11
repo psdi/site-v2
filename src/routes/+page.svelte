@@ -28,8 +28,14 @@
         position: absolute;
         cursor: move;
         &.buzzard { z-index: 100; }
-        &.tea { height: 7rem; left: 15rem; }
+        &.tea { height: 7rem; left: 40%; }
       }
+    }
+  }
+
+  @media screen and (max-width: 790px) {
+    section#box-of-interests {
+      padding: 0 1rem;
     }
   }
 </style>

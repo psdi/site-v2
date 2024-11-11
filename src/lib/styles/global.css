@@ -19,4 +19,20 @@ main {
   flex-grow: 2;
   padding: 2.5em 0 5.5em 2em;
 }
-  
+
+@media screen and (max-width: 790px) {
+  body {
+    flex-direction: column;
+    max-width: 100%;
+    padding-top: 3rem;
+  }
+
+  body * {
+    font-size: 11pt;
+  }
+
+  main {
+    flex-grow: 0 0 auto;
+    padding: 1.5rem 2rem 4rem;
+  }
+}
