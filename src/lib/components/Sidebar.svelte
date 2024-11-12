@@ -1,11 +1,15 @@
 <script>
+  import { page } from '$app/stores';
   import { onMount } from "svelte";
+
+  const pages = ['home', 'blog', 'projects', 'photos'];
+  let currentUrl = $page.url.pathname.split('/').filter(Boolean).pop() || 'home';
 
   onMount(() => {
     let nav = document.getElementById('menu');
     let offset = nav.offsetHeight;
     window.onscroll = function() {
-      if (window.matchMedia( '( max-width: 790px )' )) {
+      if (!window.matchMedia( '( max-width: 790px )' ).matches) {
         return;
       }
 
@@ -16,6 +20,11 @@
       }
     }
   });
+
+  function updatePath(path) {
+    if (!window.matchMedia( '( max-width: 790px )' )) return;
+    currentUrl = path;
+  }
 </script>
 
 <header>
@@ -24,10 +33,15 @@
   </div>
 
   <nav id="menu">
-    <a href="/">home</a>
-    <a href="/blog">blog</a>
-    <a href="/">projects (todo)</a>
-    <a href="/">photos (todo)</a>
+    {#each pages as page}
+      <a
+        href="/{page === 'home' ? '' : page}"
+        class:active="{page === currentUrl}"
+        onclick={() => updatePath(page)}
+      >
+        {page}
+      </a>
+    {/each}
   </nav>
 </header>
 
@@ -72,6 +86,10 @@
         color: var(--dark-green);
         vertical-align: middle;
         line-height: 1.75rem;
+        &.active {
+          background-color: var(--dark-grey);
+          color: white;
+        }
         &:hover {
           background-color: var(--dark-green);
           color: white;
@@ -113,7 +131,7 @@
           font-size: 10.5pt;
           text-decoration: underline;
           color: var(--dark-grey);
-          &:hover {
+          &:hover, &.active {
             background-color: transparent;
             color: var(--dark-grey);
           }
