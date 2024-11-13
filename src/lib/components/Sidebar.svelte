@@ -3,13 +3,13 @@
   import { onMount } from "svelte";
 
   const pages = ['home', 'blog', 'projects', 'photos'];
-  let currentUrl = $page.url.pathname.split('/').filter(Boolean).pop() || 'home';
+  let currentUrl = $page.url.pathname.split('/').filter(Boolean).shift() || 'home';
 
   onMount(() => {
     let nav = document.getElementById('menu');
     let offset = nav.offsetHeight;
     window.onscroll = function() {
-      if (!window.matchMedia( '( max-width: 790px )' ).matches) {
+      if (window.matchMedia( '( max-width: 790px )' ).matches) {
         return;
       }
 

@@ -15,6 +15,10 @@ body * {
   box-sizing: border-box;
 }
 
+main p {
+  line-height: 1.4rem;
+}
+
 @media screen and (max-width: 790px) {
   body {
     flex-direction: column;
