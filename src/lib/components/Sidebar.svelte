@@ -36,6 +36,7 @@
     {#each pages as page}
       <a
         href="/{page === 'home' ? '' : page}"
+        class="nav-link"
         class:active="{page === currentUrl}"
         onclick={() => updatePath(page)}
       >
@@ -53,7 +54,7 @@
   }
   header {
     flex: 0 0 auto;
-    width: 15rem;
+    width: 12rem;
 
     div.wrapper {
       height: 15rem;
@@ -64,7 +65,7 @@
         letter-spacing: 0.05em;
         margin-bottom: 3rem;
         color: white;
-        font-size: 50pt;
+        font-size: 42pt;
       }
     }
     nav {
@@ -111,10 +112,13 @@
         padding: 0.5rem 2rem;
         background-color: transparent;
         h1 {
+          width: fit-content;
           margin: 0;
+          padding: 0.1rem 0.3rem 0.3rem;
           font-size: 28pt;
           text-align: left;
-          color: var(--dark-green);
+          color: #fff;
+          background-color: var(--dark-green);
         }
       }
       nav {

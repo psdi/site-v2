@@ -17,7 +17,7 @@
             {post.meta.title}
           </a>
         </h3>
-        Published {formatDate(post.meta.date)}
+        posted on {formatDate(post.meta.date)}
       </li>
     {/each}
   </ul>
@@ -34,9 +34,17 @@ section.heading {
   margin-bottom: 2rem;
 }
 
+h3 {
+  margin-bottom: 0;
+}
+
 ul {
-  list-style: none;
+  list-style: '»';
   padding: 0;
+
+  li {
+    padding-left: 0.5rem;
+  }
 
   a {
     color: var(--dark-grey);

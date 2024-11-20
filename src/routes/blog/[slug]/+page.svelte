@@ -1,4 +1,5 @@
 <script>
+  import License from '../../../lib/components/License.svelte';
   import { formatDate } from '../../../lib/scripts/utils';
   import 'prismjs/themes/prism.min.css';
 
@@ -11,6 +12,8 @@
   <p class="date">Published: {formatDate(date)}</p>
   <Content />
 </article>
+
+<License />
 
 <style>
   h1 {
