@@ -1,5 +1,6 @@
 <script>
   import { formatDate } from '../../../lib/scripts/utils';
+  import 'prismjs/themes/prism.min.css';
 
   const { data } = $props();
   const { title, date, Content } = data;
@@ -15,6 +16,10 @@
   h1 {
     font-size: 33pt;
     margin: 0.7rem 0;
+  }
+
+  article {
+    margin-bottom: 3rem;
   }
 
   p.date {
