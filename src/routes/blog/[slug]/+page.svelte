@@ -9,7 +9,7 @@
 
 <article>
   <h1>{title}</h1>
-  <p class="date">Published: {formatDate(date)}</p>
+  <p class="date">posted on {formatDate(date)}</p>
   <Content />
 </article>
 
