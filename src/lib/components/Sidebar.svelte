@@ -29,7 +29,9 @@
 
 <header>
   <div class="wrapper">
-    <h1>psdi</h1>
+    <h1>
+      <span>p</span><span>s</span><span>d</span><span>i</span>
+    </h1>
   </div>
 
   <nav id="menu">
@@ -64,8 +66,7 @@
         text-align: center;
         letter-spacing: 0.05em;
         margin-bottom: 3rem;
-        color: white;
-        font-size: 42pt;
+        font-size: 65pt;
       }
     }
     nav {
@@ -104,6 +105,39 @@
     top: 1rem;
   }
 
+  @media screen and (min-width: 790px) {
+    h1 {
+      margin-bottom: 3rem;
+      font-size: 65pt;
+      display: flex;
+      justify-content: center;
+      color: #99C24D;
+
+      span {
+        margin: 0 -8px;
+
+        &:nth-child(1) {
+          line-height: 7.75rem;
+        }
+
+        &:nth-child(2) {
+          line-height: 5.7rem;
+          color: whitesmoke;
+        }
+
+        &:nth-child(3) {
+          line-height: 6.7rem;
+          color: #F18F01;
+        }
+
+        &:nth-child(4) {
+          line-height: 5rem;
+        }
+
+      }
+    }
+  }
+
   @media screen and (max-width: 790px) {
     header {
       width: 100%;
@@ -119,6 +153,9 @@
           text-align: left;
           color: #fff;
           background-color: var(--dark-green);
+          span {
+            font-size: inherit;
+          }
         }
       }
       nav {

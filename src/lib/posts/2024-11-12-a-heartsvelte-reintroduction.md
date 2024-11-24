@@ -2,14 +2,22 @@
 title: A Heart-Svelte Reintroduction
 date: 2024-11-12
 author: Psalm
-tags: website
+categories:
+- "website"
+- "personal"
 ---
+<script>
+    import screenshot from "./../img/screenshot_website.png";
+</script>
+
 
 \*taps mic\* Is this thing on?
 
 If you haven’t realized it already, you are currently reading the first ever entry of my *New and Improved Website’s* blog!
 
 The [first version of my website](https://github.com/psdi/site) (code viewable on my GitHub btw) was kind of a flop. It was meant to be a place of creativity where I could freely write about my interests... but I only managed to write one (1) post. Then I abandoned it altogether. I hope that I get more consistent in posting entries the second time around, even if it’s just me reading them.
+
+<img src={screenshot} alt="Home page of my previous website" />
 
 While I was thinking about how to best build my new website, I thought I could just use bare-bones HTML, CSS, and JavaScript. I immediately discarded the idea. I could have also just used PHP, which *was* the main programming language I used for the prototype of my website, but (re-)learning another language, framework, or any other technology sounded more appealing to me. My partner suggested Jekyll, a quick and easy tool based on Ruby for building static websites, but I guess I was already keen on using a frontend framework like React or Vue. Spoiler: it didn’t end up being either of them.
 

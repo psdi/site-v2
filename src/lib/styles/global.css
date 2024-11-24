@@ -19,6 +19,12 @@ main p {
   line-height: 1.4rem;
 }
 
+article img {
+  width: 30rem;
+  display: block;
+  margin: auto;
+}
+
 @media screen and (max-width: 790px) {
   body {
     flex-direction: column;
@@ -28,5 +34,10 @@ main p {
 
   body * {
     font-size: 11pt;
+  }
+
+  article img {
+    width: 100%;
+    margin: 0;
   }
 }

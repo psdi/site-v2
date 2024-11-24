@@ -1,6 +1,7 @@
 <script>
   import buzzard from "../lib/img/buzzard.png";
   import tea from "../lib/img/tea.png";
+  import math from "../lib/img/math.png";
   import { drag } from '../lib/scripts/drag';
 </script>
 
@@ -10,6 +11,7 @@
 <section id="box-of-interests">
   <img alt="A flying common buzzard from below" src={buzzard} class="draggy buzzard" draggable="false" use:drag />
   <img alt="A gaiwan and a teacup with tea leaves and liquid respectively" src={tea} class="draggy tea" draggable="false" use:drag />
+  <img alt="A sheet of graph paper with mathematical equations" src={math} class="draggy math" draggable="false" use:drag />
 </section>
 <p>As you can see in my Box Of Interests, I love birdwatching and taking pictures of birds. Sometimes I draw letters and other things (to the best of my abilities), and I'm also interested in graphic design. Another field that I'd love to explore is maths. And like other people, I enjoy listening to many types of music. Finally, I enjoy drinking loose leaf teas.</p>
 
@@ -22,8 +24,9 @@
       max-height: 15rem;
       position: absolute;
       cursor: move;
-      &.buzzard { z-index: 100; }
-      &.tea { height: 7rem; left: 40%; }
+      &.buzzard { z-index: 5; }
+      &.tea { height: 7rem; left: 40%; z-index: 2; }
+      &.math { left: 5%; z-index: 1; }
     }
   }
 
