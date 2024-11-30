@@ -24,9 +24,9 @@
       max-height: 15rem;
       position: absolute;
       cursor: move;
-      &.buzzard { z-index: 5; }
-      &.tea { height: 7rem; left: 40%; z-index: 2; }
-      &.math { left: 5%; z-index: 1; }
+      &.buzzard { z-index: 5; left: 5%; }
+      &.tea { height: 7rem; left: 50%; z-index: 2; }
+      &.math { left: 10%; z-index: 1; }
     }
   }
 

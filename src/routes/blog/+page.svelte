@@ -1,5 +1,5 @@
 <script>
-  import { formatDate } from '../../lib/scripts/utils';
+  import PostList from '../../lib/components/PostList.svelte';
   const { data } = $props();
 </script>
 
@@ -8,59 +8,10 @@
   <p>A dedicated space for updates on dev projects and… anything and everything else</p>
 </section>
 
-<section>
-  <ul>
-    {#each data.posts as post}
-      <li>
-        <h3>
-          <a href={post.path}>
-            {post.meta.title}
-          </a>
-        </h3>
-        posted on {formatDate(post.meta.date)}
-      </li>
-    {/each}
-  </ul>
-</section>
+<PostList posts={data.posts} />
 
 <style>
-:root {
-  --dark-grey: #3b3b3b;
-  --orange: #FFAD05;
-  --orange-light: #FFD685;
-}
-
-section.heading {
-  margin-bottom: 2rem;
-}
-
-h3 {
-  margin-bottom: 0;
-}
-
-ul {
-  list-style: '»';
-  padding: 0;
-
-  li {
-    padding-left: 0.5rem;
+  section.heading {
+    margin-bottom: 2rem;
   }
-
-  a {
-    color: var(--dark-grey);
-    text-decoration: underline;
-    text-decoration-color: var(--orange-light);
-    text-decoration-skip-ink: none;
-    text-decoration-thickness: .4rem;
-    text-underline-offset: -.25rem;
-
-    &:hover {
-      text-decoration-color: var(--orange);
-    }
-
-    &:visited {
-      color: var(--charcoal);
-    }
-  }
-}
 </style>
